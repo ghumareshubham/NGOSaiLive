@@ -150,6 +150,91 @@
 
    
 
+/* Slide Effect for the Carousel */
+
+/* Container Customization */
+#carouselExampleInterval {
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+/* Make the images slide */
+.carousel-inner {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.carousel-item {
+  display: none; /* Hide all items initially */
+  position: absolute;
+  width: 100%;
+  transition: transform 1.5s ease-in-out;
+}
+
+.carousel-item.active {
+  display: block; /* Display the active item */
+  position: relative; /* Position the active item correctly */
+}
+
+/* Sliding Animation */
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  transform: translateX(0); /* Reset the position of active item */
+}
+
+.carousel-item-next,
+.carousel-item-prev {
+  display: block; /* Show next and previous items */
+}
+
+.carousel-item-next {
+  transform: translateX(100%); /* Next slide comes from the right */
+}
+
+.carousel-item-prev {
+  transform: translateX(-100%); /* Previous slide comes from the left */
+}
+
+.carousel-item.active.carousel-item-start {
+  transform: translateX(-100%); /* Slide left when the active item starts */
+}
+
+.carousel-item.active.carousel-item-end {
+  transform: translateX(100%); /* Slide right when the active item ends */
+}
+
+.carousel-item-next.carousel-item-start,
+.carousel-item-prev.carousel-item-end {
+  transform: translateX(0); /* Reset position for next/prev items */
+}
+
+/* Optional: Customize the navigation buttons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: #000;
+}
+
+/* Indicator Styles */
+.carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 12px;
+  background-color: #555;
+}
+
+.carousel-indicators .active {
+  background-color: #fff;
+}
+
    
 
   </style>
@@ -228,9 +313,10 @@
     </button>
   </div>
 
+  <!-- corousel END -->
 
   
-  <!-- Focus_Areas -->
+  <!-- Focus_Areas START -->
   <h1 class="card-title mt-5 mb-3" style="text-align: center;font-size: xx-large;">
     <i class="fa-sharp-duotone fa-solid fa-bullseye" style="color: #63E6BE; font-size: 1em; margin-right: 5px;"></i>
     Area Of Interest
@@ -350,6 +436,7 @@
       </div>
     </div>
   </div>
+    <!-- Focus_Areas END -->
 
 
   
